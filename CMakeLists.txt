@@ -12,10 +12,10 @@ set(libname qjsonmodel)
 
 list(APPEND CMAKE_PREFIX_PATH ${AQTDIR})
 set(QT_LIBINFIX "ASV")
-find_package(Qt5 CONFIG REQUIRED COMPONENTS Gui)
+find_package(Qt6 CONFIG REQUIRED COMPONENTS Gui)
 
 add_library(${libname} SHARED)
-target_link_libraries(${libname} Qt5::Gui)
+target_link_libraries(${libname} Qt::Gui)
 set_target_properties(${libname} PROPERTIES AUTOMOC ON)
 set_target_properties(${libname} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 if (UNIX)
