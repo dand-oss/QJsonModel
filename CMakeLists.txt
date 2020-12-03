@@ -10,6 +10,7 @@ asv_cmake_defaults( )
 
 set(libname qjsonmodel)
 
+list(APPEND CMAKE_PREFIX_PATH ${AQTDIR})
 set(QT_LIBINFIX "ASV")
 find_package(Qt5 CONFIG REQUIRED COMPONENTS Gui)
 set(CMAKE_AUTOMOC ON)
