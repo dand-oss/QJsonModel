@@ -10,9 +10,13 @@ asv_cmake_defaults( )
 
 set(libname qjsonmodel)
 
-list(APPEND CMAKE_PREFIX_PATH ${AQTDIR})
-set(QT_LIBINFIX "ASV")
-find_package(Qt6 CONFIG REQUIRED COMPONENTS Gui)
+find_package(Qt6 CONFIG REQUIRED
+    PATHS ${AQTDIR} NO_DEFAULT_PATH
+    COMPONENTS
+    Gui)
+asv_print_package_properties(
+    Qt::Gui
+    )
 
 add_library(${libname} SHARED)
 target_link_libraries(${libname} Qt::Gui)
