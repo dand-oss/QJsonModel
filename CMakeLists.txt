@@ -14,12 +14,12 @@ asv_cmake_defaults( )
 
 set(libname qjsonmodel)
 
-find_package(Qt6 CONFIG REQUIRED
-    PATHS ${AQTDIR} NO_DEFAULT_PATH
+find_package(Qt5 CONFIG REQUIRED
+    PATHS ${ASV_PLAT_PORTS}/qt5 NO_DEFAULT_PATH
     COMPONENTS
     Gui)
 asv_print_package_properties(
-    Qt::Gui
+    Qt5::Gui
     )
 
 # -----------------------
@@ -38,10 +38,10 @@ target_sources(${libname} PUBLIC
     FILES ${public_headers}
 )
 
-target_link_libraries(${libname} Qt::Gui)
+target_link_libraries(${libname} Qt5::Gui)
 set_target_properties(${libname} PROPERTIES
     AUTOMOC ON
-    OUTPUT_NAME "Qt6JsonModel")
+    OUTPUT_NAME "Qt5JsonModel")
 
 if(UNIX)
     # force linker to resolve all deps
