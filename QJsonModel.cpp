@@ -490,7 +490,7 @@ QJsonValue QJsonModel::genJson(QJsonTreeItem *item) const {
     return arr;
   } else {
     QJsonValue va;
-    switch (item->value().typeId()) {
+    switch (item->value().type()) {
     case QMetaType::Bool: {
       va = item->value().toBool();
       break;
